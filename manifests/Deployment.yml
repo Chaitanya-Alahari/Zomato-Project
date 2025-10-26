@@ -1,5 +1,5 @@
 ---
-apiVersion: apps/v1
+Version: "3"
 kind: Deployment
 metadata:
   name: myapp
