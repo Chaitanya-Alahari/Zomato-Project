@@ -1,1 +1,20 @@
+version: "3.9"
+
+services:
+  mysvc:
+    image: chaitanyaalahari/myimage:zomato
+    ports:
+      - "3000:3000"   # maps targetPort 3000 to host port 3000
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    networks:
+      - swiggy-net
+    labels:
+      app: swiggy
+
+networks:
+  swiggy-net:
+    driver: overlay
 
