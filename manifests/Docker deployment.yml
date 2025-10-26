@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  myapp:
+    image: chaitanyaalahari/myimage:zomato
+    ports:
+      - "3000:3000"   # maps containerPort 3000 to host
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+    networks:
+      - swiggy-net
+
+networks:
+  swiggy-net:
+    driver: overlay
